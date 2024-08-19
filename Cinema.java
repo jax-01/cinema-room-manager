@@ -69,7 +69,7 @@ public class Cinema {
             // int secondHalfIncome = secondHalf * seats * 8;
             // totalIncome = firstHalfIncome + secondHalfIncome;
         }
-        System.out.println("Ticket price: " + price);
+        System.out.println("Ticket price: $" + price);
         System.out.println("Cinema seats:");
         for (int i = 0; i < seatsArray.length; i++) {
             for (int j = 0; j < seatsArray[i].length; j++) {
