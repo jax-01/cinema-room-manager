@@ -69,6 +69,6 @@ public class Cinema {
             // int secondHalfIncome = secondHalf * seats * 8;
             // totalIncome = firstHalfIncome + secondHalfIncome;
         }
-        System.out.println("Total income:\n" + "$" + totalIncome);
+        System.out.println("Ticket price: " + price);
     }
 }
