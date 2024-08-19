@@ -35,12 +35,19 @@ public class Cinema {
             }
         }
 
+        System.out.println("Cinema seats:");
         for (int i = 0; i < seatsArray.length; i++) {
             for (int j = 0; j < seatsArray[i].length; j++) {
                 System.out.print(seatsArray[i][j] + " ");
             }
             System.out.println();
         }
+
+        System.out.print("Enter row choice: ");
+        int rowChoice = sc.nextInt();
+        System.out.println("Enter seat choice: ");
+        int seatChoice = sc.nextInt();
+        seatsArray[rowChoice][seatChoice] = 'B';
 
         /*
          * If totalSeats <= 60, then the price of each ticket is 10 dollars.
