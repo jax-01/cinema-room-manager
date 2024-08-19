@@ -13,7 +13,7 @@ public class Cinema {
 //        System.out.println("7 S S S S S S S S");
 
         Scanner sc = new Scanner(System.in);
-        int totalIncome;
+        // int totalIncome;
         int totalSeats;
         int price;
 
@@ -60,13 +60,13 @@ public class Cinema {
          */
         if (totalSeats <= 60) {
             price = 10;
-            totalIncome = totalSeats * price;
+            // totalIncome = totalSeats * price;
         } else {
             int firstHalf = rows / 2;
-            int firstHalfIncome = firstHalf * seats * 10;
             int secondHalf = rows - firstHalf;
-            int secondHalfIncome = secondHalf * seats * 8;
-            totalIncome = firstHalfIncome + secondHalfIncome;
+            // int firstHalfIncome = firstHalf * seats * 10;
+            // int secondHalfIncome = secondHalf * seats * 8;
+            // totalIncome = firstHalfIncome + secondHalfIncome;
         }
         System.out.println("Total income:\n" + "$" + totalIncome);
     }
