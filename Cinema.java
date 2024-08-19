@@ -63,7 +63,8 @@ public class Cinema {
             // totalIncome = totalSeats * price;
         } else {
             int firstHalf = rows / 2;
-            int secondHalf = rows - firstHalf;
+            price = rowChoice <= firstHalf ? 10: 8;
+
             // int firstHalfIncome = firstHalf * seats * 10;
             // int secondHalfIncome = secondHalf * seats * 8;
             // totalIncome = firstHalfIncome + secondHalfIncome;
