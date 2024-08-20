@@ -65,7 +65,7 @@ public class Cinema {
         }
     }
 
-    public static void printSeats(int[][] seatsArray) {
+    public static void printSeats(char[][] seatsArray) {
         System.out.println("Cinema seats:");
         for (int i = 0; i < seatsArray.length; i++) {
             for (int j = 0; j < seatsArray[i].length; j++) {
