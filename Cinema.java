@@ -2,16 +2,6 @@ import java.util.Scanner;
 
 public class Cinema {
     public static void main(String[] args) {
-//        System.out.println("Cinema:");
-//        System.out.println("  1 2 3 4 5 6 7 8");
-//        System.out.println("1 S S S S S S S S");
-//        System.out.println("2 S S S S S S S S");
-//        System.out.println("3 S S S S S S S S");
-//        System.out.println("4 S S S S S S S S");
-//        System.out.println("5 S S S S S S S S");
-//        System.out.println("6 S S S S S S S S");
-//        System.out.println("7 S S S S S S S S");
-
         Scanner sc = new Scanner(System.in);
         // int totalIncome;
         int totalSeats;
@@ -33,14 +23,6 @@ public class Cinema {
             for (int j = 0; j < seatsArray[i].length; j++) {
                 seatsArray[i][j] = 'S';
             }
-        }
-
-        System.out.println("Cinema seats:");
-        for (int i = 0; i < seatsArray.length; i++) {
-            for (int j = 0; j < seatsArray[i].length; j++) {
-                System.out.print(seatsArray[i][j] + " ");
-            }
-            System.out.println();
         }
 
         System.out.print("Enter row choice: ");
@@ -70,6 +52,16 @@ public class Cinema {
             // totalIncome = firstHalfIncome + secondHalfIncome;
         }
         System.out.println("Ticket price: $" + price);
+        System.out.println("Cinema seats:");
+        for (int i = 0; i < seatsArray.length; i++) {
+            for (int j = 0; j < seatsArray[i].length; j++) {
+                System.out.print(seatsArray[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void printSeats(int[][] seatsArray) {
         System.out.println("Cinema seats:");
         for (int i = 0; i < seatsArray.length; i++) {
             for (int j = 0; j < seatsArray[i].length; j++) {
