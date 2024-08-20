@@ -20,14 +20,6 @@ public class Cinema {
 
         initializeSeats(seatsArray);
         buyTicket(seatsArray, rows, totalSeats);
-
-        System.out.println("Cinema seats:");
-        for (int i = 0; i < seatsArray.length; i++) {
-            for (int j = 0; j < seatsArray[i].length; j++) {
-                System.out.print(seatsArray[i][j] + " ");
-            }
-            System.out.println();
-        }
     }
 
     public static void initializeSeats(char[][] seatsArray) {
