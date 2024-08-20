@@ -20,12 +20,8 @@ public class Cinema {
         totalSeats = rows * seats;
 
         initializeSeats(seatsArray);
+        buyTicket(seatsArray);
 
-        System.out.print("Enter row choice: ");
-        int rowChoice = sc.nextInt();
-        System.out.print("Enter seat choice: ");
-        int seatChoice = sc.nextInt();
-        seatsArray[rowChoice - 1][seatChoice - 1] = 'B';
 
         /*
          * If totalSeats <= 60, then the price of each ticket is 10 dollars.
@@ -73,5 +69,17 @@ public class Cinema {
             }
             System.out.println();
         }
+    }
+
+    public static void buyTicket(char[][] seatsArray) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter row choice: ");
+        int rowChoice = sc.nextInt();
+        System.out.print("Enter seat choice: ");
+        int seatChoice = sc.nextInt();
+        seatsArray[rowChoice - 1][seatChoice - 1] = 'B';
+
+        sc.close();
     }
 }
