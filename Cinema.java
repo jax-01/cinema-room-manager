@@ -19,11 +19,7 @@ public class Cinema {
         char[][] seatsArray = new char[rows][seats];
         totalSeats = rows * seats;
 
-        for (int i = 0; i < seatsArray.length; i++) {
-            for (int j = 0; j < seatsArray[i].length; j++) {
-                seatsArray[i][j] = 'S';
-            }
-        }
+        initializeSeats(seatsArray);
 
         System.out.print("Enter row choice: ");
         int rowChoice = sc.nextInt();
@@ -58,6 +54,14 @@ public class Cinema {
                 System.out.print(seatsArray[i][j] + " ");
             }
             System.out.println();
+        }
+    }
+
+    public static void initializeSeats(char[][] seatsArray) {
+        for (int i = 0; i < seatsArray.length; i++) {
+            for (int j = 0; j < seatsArray[i].length; j++) {
+                seatsArray[i][j] = 'S';
+            }
         }
     }
 
