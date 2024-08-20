@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Cinema {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // int totalIncome;
         int totalSeats;
 
         /*
@@ -11,8 +10,7 @@ public class Cinema {
          * and the number of seats in each row. The ticket price will be determined
          * by the inputted numbers.
          */
-        System.out.println("Enter the number of rows:");
-        int rows = sc.nextInt();
+        int rows = getNumOfRows();
         System.out.println("Enter the number of seats in each row:");
         int seats = sc.nextInt();
         char[][] seatsArray = new char[rows][seats];
@@ -20,6 +18,11 @@ public class Cinema {
 
         initializeSeats(seatsArray);
         buyTicket(seatsArray, rows, totalSeats);
+    }
+
+    public static int getNumOfRows() {
+        System.out.println("Enter the number of rows:");
+        return new Scanner(System.in).nextInt();
     }
 
     public static void initializeSeats(char[][] seatsArray) {
