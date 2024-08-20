@@ -13,7 +13,7 @@ public class Cinema {
         int rows = getNumOfRows();
         int seats = getNumOfSeats();
         char[][] seatsArray = new char[rows][seats];
-        totalSeats = rows * seats;
+        totalSeats = getTotalSeats(rows, seats);
 
         initializeSeats(seatsArray);
         buyTicket(seatsArray, rows, totalSeats);
@@ -27,6 +27,10 @@ public class Cinema {
     public static int getNumOfSeats() {
         System.out.println("Enter the number of seats:");
         return new Scanner(System.in).nextInt();
+    }
+
+    public static int getTotalSeats(int rows, int seats) {
+        return rows * seats;
     }
 
     public static void initializeSeats(char[][] seatsArray) {
