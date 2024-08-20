@@ -11,8 +11,7 @@ public class Cinema {
          * by the inputted numbers.
          */
         int rows = getNumOfRows();
-        System.out.println("Enter the number of seats in each row:");
-        int seats = sc.nextInt();
+        int seats = getNumOfSeats();
         char[][] seatsArray = new char[rows][seats];
         totalSeats = rows * seats;
 
@@ -22,6 +21,11 @@ public class Cinema {
 
     public static int getNumOfRows() {
         System.out.println("Enter the number of rows:");
+        return new Scanner(System.in).nextInt();
+    }
+
+    public static int getNumOfSeats() {
+        System.out.println("Enter the number of seats:");
         return new Scanner(System.in).nextInt();
     }
 
