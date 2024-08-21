@@ -11,7 +11,7 @@ public class Cinema {
         int totalSeats = getTotalSeats(rows, seats);
         initializeSeats(seatsArray);
 
-        int choice = 0;
+        int choice;
         do {
             System.out.println("1. Show the seats");
             System.out.println("2. Buy a ticket");
