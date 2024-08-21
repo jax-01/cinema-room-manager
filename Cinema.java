@@ -2,21 +2,32 @@ import java.util.Scanner;
 
 public class Cinema {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int totalSeats;
 
-        /*
-         * Reads two positive integer numbers from user: the number of rows
-         * and the number of seats in each row. The ticket price will be determined
-         * by the inputted numbers.
-         */
+        Scanner sc = new Scanner(System.in);
+//        int choice;
         int rows = getNumOfRows();
         int seats = getNumOfSeats();
         char[][] seatsArray = new char[rows][seats];
-        totalSeats = getTotalSeats(rows, seats);
-
+        int totalSeats = getTotalSeats(rows, seats);
         initializeSeats(seatsArray);
-        buyTicket(seatsArray, rows, totalSeats);
+
+        int choice = 0;
+        do {
+            System.out.println("1. Show the seats");
+            System.out.println("2. Buy a ticket");
+            System.out.println("3. Exit");
+            choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    printSeats(seatsArray);
+                    break;
+                case 2:
+                    buyTicket(seatsArray, rows, totalSeats);
+                    break;
+                default:
+                    break;
+            }
+        } while (choice == 1 || choice == 2);
     }
 
     public static int getNumOfRows() {
@@ -61,12 +72,10 @@ public class Cinema {
         int seatChoice = sc.nextInt();
 
         seatsArray[rowChoice - 1][seatChoice - 1] = 'B';
-        calculatePrice(seatsArray, rowChoice, rows, totalSeats);
-
-        sc.close();
+        calculatePrice(rowChoice, rows, totalSeats);
     }
 
-    public static void calculatePrice(char[][] seatsArray, int rowChoice, int rows, int totalSeats) {
+    public static void calculatePrice(int rowChoice, int rows, int totalSeats) {
         /*
          * If totalSeats <= 60, then the price of each ticket is 10 dollars.
          * Else if totalSeats > 60, the tickets are 10 dollars for the front
