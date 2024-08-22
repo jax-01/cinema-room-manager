@@ -99,7 +99,7 @@ public class Cinema {
          *
          * The equivalent code for the conditions are shown below.
          */
-        int price = 0;
+        int price;
         if (totalSeats <= 60) {
             price = 10;
             // totalIncome = totalSeats * price;
