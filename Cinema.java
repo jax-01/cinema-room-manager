@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class Cinema {
 
     private static int numberOfTickets = 0;
+    private static int currentIncome = 0;
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-//        int choice;
         int rows = getNumOfRows();
         int seats = getNumOfSeats();
         char[][] seatsArray = new char[rows][seats];
@@ -115,6 +115,7 @@ public class Cinema {
             // int secondHalfIncome = secondHalf * seats * 8;
             // totalIncome = firstHalfIncome + secondHalfIncome;
         }
+        currentIncome += price;
         System.out.println("Ticket price: $" + price);
     }
 }
