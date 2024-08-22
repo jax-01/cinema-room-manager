@@ -67,16 +67,22 @@ public class Cinema {
 
         System.out.print("Enter row choice: ");
         int rowChoice = sc.nextInt();
+        rowChoice--;
 
         System.out.print("Enter seat choice: ");
         int seatChoice = sc.nextInt();
+        seatChoice--;
 
-        seatsArray[rowChoice - 1][seatChoice - 1] = 'B';
-        calculatePrice(rowChoice, rows, totalSeats);
+        if (isSeatAvailable(seatsArray, rowChoice, seatChoice)) {
+            seatsArray[rowChoice][seatChoice] = 'B';
+            calculatePrice(rowChoice, rows, totalSeats);
+        } else {
+            System.out.println("That ticket has already been purchased!");
+        }
     }
 
-    public static boolean isSeatAvailable(char[][] seatsArray, int row, int seat) {
-        return seatsArray[row][seat] == 'S';
+    public static boolean isSeatAvailable(char[][] seatsArray, int rowChoice, int seatChoice) {
+        return seatsArray[rowChoice][seatChoice] == 'S';
     }
 
     public static void calculatePrice(int rowChoice, int rows, int totalSeats) {
