@@ -75,6 +75,10 @@ public class Cinema {
         calculatePrice(rowChoice, rows, totalSeats);
     }
 
+    public static boolean isSeatAvailable(char[][] seatsArray, int row, int seat) {
+        return seatsArray[row][seat] == 'S';
+    }
+
     public static void calculatePrice(int rowChoice, int rows, int totalSeats) {
         /*
          * If totalSeats <= 60, then the price of each ticket is 10 dollars.
