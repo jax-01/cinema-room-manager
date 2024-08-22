@@ -81,7 +81,7 @@ public class Cinema {
             seatChoice--;
             if (isSeatAvailable(seatsArray, rowChoice, seatChoice)) {
                 seatsArray[rowChoice][seatChoice] = 'B';
-                calculatePrice(rowChoice, rows, totalSeats);
+                System.out.println("Ticket price: $" + calculatePrice(rowChoice, rows, totalSeats));
                 numberOfTickets++;
             } else {
                 System.out.println("That ticket has already been purchased!");
@@ -93,7 +93,7 @@ public class Cinema {
         return seatsArray[rowChoice][seatChoice] == 'S';
     }
 
-    public static void calculatePrice(int rowChoice, int rows, int totalSeats) {
+    public static int calculatePrice(int rowChoice, int rows, int totalSeats) {
         /*
          * If totalSeats <= 60, then the price of each ticket is 10 dollars.
          * Else if totalSeats > 60, the tickets are 10 dollars for the front
@@ -116,6 +116,6 @@ public class Cinema {
             // totalIncome = firstHalfIncome + secondHalfIncome;
         }
         currentIncome += price;
-        System.out.println("Ticket price: $" + price);
+        return price;
     }
 }
