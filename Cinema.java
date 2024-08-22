@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
 public class Cinema {
+
+    private static int numberOfTickets = 0;
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -79,6 +82,7 @@ public class Cinema {
             if (isSeatAvailable(seatsArray, rowChoice, seatChoice)) {
                 seatsArray[rowChoice][seatChoice] = 'B';
                 calculatePrice(rowChoice, rows, totalSeats);
+                numberOfTickets++;
             } else {
                 System.out.println("That ticket has already been purchased!");
             }
