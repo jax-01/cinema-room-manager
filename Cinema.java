@@ -19,7 +19,8 @@ public class Cinema {
         do {
             System.out.println("1. Show the seats");
             System.out.println("2. Buy a ticket");
-            System.out.println("3. Exit");
+            System.out.println("3. Statistics");
+            System.out.println("0. Exit");
             choice = sc.nextInt();
             switch (choice) {
                 case 1:
@@ -28,10 +29,13 @@ public class Cinema {
                 case 2:
                     buyTicket(seatsArray, rows, seats, totalSeats);
                     break;
+                case 3:
+                    showStatistics(totalSeats);
+                    break;
                 default:
                     break;
             }
-        } while (choice == 1 || choice == 2);
+        } while (choice >= 1 && choice <= 3);
     }
 
     public static int getNumOfRows() {
@@ -119,5 +123,12 @@ public class Cinema {
         }
         currentIncome += price;
         System.out.println("Ticket price: $" + price);
+    }
+
+    public static void showStatistics(int totalSeats) {
+        System.out.printf("Number of purchased tickets: %d \n", numberOfTickets);
+        System.out.printf("Percentage: %.2f \n", numberOfTickets/(double)totalSeats * 100);
+        System.out.printf("Current income: $%d \n", currentIncome);
+        System.out.printf("Total income: $%d \n", totalIncome);
     }
 }
