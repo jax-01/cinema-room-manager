@@ -22,7 +22,7 @@ public class Cinema {
                     printSeats(seatsArray);
                     break;
                 case 2:
-                    buyTicket(seatsArray, rows, totalSeats);
+                    buyTicket(seatsArray, rows, seats, totalSeats);
                     break;
                 default:
                     break;
@@ -62,22 +62,26 @@ public class Cinema {
         }
     }
 
-    public static void buyTicket(char[][] seatsArray, int rows, int totalSeats) {
+    public static void buyTicket(char[][] seatsArray, int rows, int seats, int totalSeats) {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter row choice: ");
         int rowChoice = sc.nextInt();
-        rowChoice--;
 
         System.out.print("Enter seat choice: ");
         int seatChoice = sc.nextInt();
-        seatChoice--;
 
-        if (isSeatAvailable(seatsArray, rowChoice, seatChoice)) {
-            seatsArray[rowChoice][seatChoice] = 'B';
-            calculatePrice(rowChoice, rows, totalSeats);
+        if (rowChoice > rows || seatChoice > seats) {
+            System.out.println("Wrong input!");
         } else {
-            System.out.println("That ticket has already been purchased!");
+            rowChoice--;
+            seatChoice--;
+            if (isSeatAvailable(seatsArray, rowChoice, seatChoice)) {
+                seatsArray[rowChoice][seatChoice] = 'B';
+                calculatePrice(rowChoice, rows, totalSeats);
+            } else {
+                System.out.println("That ticket has already been purchased!");
+            }
         }
     }
 
