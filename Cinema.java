@@ -4,6 +4,7 @@ public class Cinema {
 
     private static int numberOfTickets = 0;
     private static int currentIncome = 0;
+    private static int totalIncome = 0;
 
     public static void main(String[] args) {
 
@@ -81,7 +82,7 @@ public class Cinema {
             seatChoice--;
             if (isSeatAvailable(seatsArray, rowChoice, seatChoice)) {
                 seatsArray[rowChoice][seatChoice] = 'B';
-                System.out.println("Ticket price: $" + calculatePrice(rowChoice, rows, totalSeats));
+                calculatePrice(rowChoice, rows, seats, totalSeats);
                 numberOfTickets++;
             } else {
                 System.out.println("That ticket has already been purchased!");
@@ -93,7 +94,7 @@ public class Cinema {
         return seatsArray[rowChoice][seatChoice] == 'S';
     }
 
-    public static int calculatePrice(int rowChoice, int rows, int totalSeats) {
+    public static void calculatePrice(int rowChoice, int rows, int seats, int totalSeats) {
         /*
          * If totalSeats <= 60, then the price of each ticket is 10 dollars.
          * Else if totalSeats > 60, the tickets are 10 dollars for the front
@@ -106,16 +107,17 @@ public class Cinema {
         int price;
         if (totalSeats <= 60) {
             price = 10;
-            // totalIncome = totalSeats * price;
+            totalIncome = totalSeats * price;
         } else {
             int firstHalf = rows / 2;
+            int secondHalf = rows - firstHalf;
             price = rowChoice <= firstHalf ? 10: 8;
 
-            // int firstHalfIncome = firstHalf * seats * 10;
-            // int secondHalfIncome = secondHalf * seats * 8;
-            // totalIncome = firstHalfIncome + secondHalfIncome;
+            int firstHalfIncome = firstHalf * seats * 10;
+            int secondHalfIncome = secondHalf * seats * 8;
+            totalIncome = firstHalfIncome + secondHalfIncome;
         }
         currentIncome += price;
-        return price;
+        System.out.println("Ticket price: $" + price);
     }
 }
